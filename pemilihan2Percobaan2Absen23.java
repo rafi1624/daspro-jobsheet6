@@ -6,7 +6,7 @@ public class pemilihan2Percobaan2Absen23 {
         Scanner input23 = new Scanner(System.in);
         int menu;
         double diskon,totalHarga;
-        String member ;
+        String member, pembayaranQris ;
         double harga;
 
         System.out.println("-------------------------");
@@ -21,6 +21,8 @@ public class pemilihan2Percobaan2Absen23 {
         input23.nextLine();
         System.out.print("Apakah Punya Member (y/n) ? = ");
         member = input23.nextLine();
+        System.out.println("Pembayaran Qris/Tunai = ");
+        pembayaranQris = input23.nextLine();
         System.out.println("--------------------------------------");
 
         if (member.equalsIgnoreCase("y")) {
@@ -42,9 +44,14 @@ public class pemilihan2Percobaan2Absen23 {
                 System.out.println("Masukkan Pilihan Menu Dengan Benar");
                 return;
             }
+            
             totalHarga = harga - (harga*diskon);
             System.out.println("Total Bayar Setelah Diskon = " + totalHarga);
+            if (pembayaranQris.equalsIgnoreCase("QRIS")) {
+                totalHarga -= 1000;
+                System.out.println("Pembayaran dengan QRIS = " + totalHarga);
 
+            }
         }
         else if (member.equalsIgnoreCase("n")) {
             if (menu == 1) {
@@ -66,6 +73,11 @@ public class pemilihan2Percobaan2Absen23 {
             }
             
             System.out.println("Total Bayar = " + harga);
+            if (pembayaranQris.equalsIgnoreCase("QRIS")) {
+                harga -= 1000;
+                System.out.println("Pembayaran dengan QRIS = " + harga);
+
+            }
 
         
         } else {
